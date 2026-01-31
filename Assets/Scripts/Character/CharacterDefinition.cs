@@ -58,9 +58,9 @@ public class CharacterDefinition : ScriptableObject
     public float ankleDamper = 40f;
 
     [Header("Movement")]
-    public float moveForce = 50f;
+    public float moveForce = 200f;
     public float jumpImpulse = 300f;
-    public float maxSpeed = 5f;
+    public float maxSpeed = 12f;
 
     [Header("Balance")]
     public float balanceTorque = 3000f;

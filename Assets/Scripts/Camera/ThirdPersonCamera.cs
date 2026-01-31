@@ -5,7 +5,7 @@ public class ThirdPersonCamera : MonoBehaviour
     [SerializeField] PlayerInputHandler _input;
     [SerializeField] RagdollCharacter _target;
     [SerializeField] float _distance = 5f;
-    [SerializeField] float _sensitivity = 2f;
+    [SerializeField] float _sensitivity = 8f;
     [SerializeField] float _minVerticalAngle = -30f;
     [SerializeField] float _maxVerticalAngle = 70f;
     [SerializeField] Vector3 _offset = new Vector3(0f, 1.0f, 0f);
