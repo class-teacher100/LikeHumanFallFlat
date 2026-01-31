@@ -18,8 +18,11 @@ public class ThirdPersonCamera : MonoBehaviour
     {
         if (_target == null || _target.pelvis == null) return;
 
+        // Yaw follows character's facing direction
+        _yaw = _target.pelvis.Rb.transform.eulerAngles.y;
+
+        // Pitch still controlled by look input
         Vector2 look = _input.LookInput;
-        _yaw += look.x * _sensitivity * Time.deltaTime;
         _pitch -= look.y * _sensitivity * Time.deltaTime;
         _pitch = Mathf.Clamp(_pitch, _minVerticalAngle, _maxVerticalAngle);
 
