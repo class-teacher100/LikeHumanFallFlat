@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1322906290a276d48b182d4eea5d1a84, type: 3}
+  m_Name: DefaultCharacterDefinition
+  m_EditorClassIdentifier: 
+  pelvisMass: 15
+  torsoMass: 10
+  headMass: 5
+  upperArmMass: 3
+  lowerArmMass: 2
+  handMass: 1
+  upperLegMass: 5
+  lowerLegMass: 4
+  footMass: 2
+  pelvisSize: {x: 0.3, y: 0.15}
+  torsoSize: {x: 0.4, y: 0.18}
+  headRadius: 0.12
+  upperArmSize: {x: 0.28, y: 0.06}
+  lowerArmSize: {x: 0.25, y: 0.05}
+  handRadius: 0.06
+  upperLegSize: {x: 0.35, y: 0.08}
+  lowerLegSize: {x: 0.35, y: 0.07}
+  footSize: {x: 0.15, y: 0.05}
+  spineSpring: 2500
+  spineDamper: 150
+  neckSpring: 500
+  neckDamper: 50
+  shoulderSpring: 800
+  shoulderDamper: 80
+  elbowSpring: 600
+  elbowDamper: 60
+  wristSpring: 300
+  wristDamper: 30
+  hipSpring: 1500
+  hipDamper: 120
+  kneeSpring: 1000
+  kneeDamper: 100
+  ankleSpring: 400
+  ankleDamper: 40
+  moveForce: 50
+  jumpImpulse: 300
+  maxSpeed: 5
+  balanceTorque: 3000
+  balanceDamping: 200
+  grabBreakForce: 2000
+  grabRange: 0.3

@@ -168,7 +168,7 @@ public class TestSceneBuilder : MonoBehaviour
         SetField(grabCtrl, "_character", ragdoll);
         SetField(debugger, "_character", ragdoll);
         SetField(debugger, "_groundDetector", groundDetector);
-        SetField(groundDetector, "_groundLayer", LayerMask.GetMask("Ground"));
+        SetField(groundDetector, "_groundLayer", (LayerMask)LayerMask.GetMask("Ground"));
 
         // Destroy the default Main Camera if it exists
         var mainCam = UnityEngine.Camera.main;

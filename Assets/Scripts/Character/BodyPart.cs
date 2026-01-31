@@ -13,14 +13,34 @@ public class BodyPart : MonoBehaviour
 {
     public BodyPartType partType;
     public Rigidbody Rb { get; private set; }
-    public ConfigurableJoint Joint { get; private set; }
     public Collider Col { get; private set; }
+
+    ConfigurableJoint _joint;
+    bool _jointChecked;
+
+    public ConfigurableJoint Joint
+    {
+        get
+        {
+            if (!_jointChecked)
+            {
+                _joint = GetComponent<ConfigurableJoint>();
+                _jointChecked = true;
+            }
+            return _joint;
+        }
+    }
 
     void Awake()
     {
         Rb = GetComponent<Rigidbody>();
-        Joint = GetComponent<ConfigurableJoint>();
         Col = GetComponent<Collider>();
+    }
+
+    public void RefreshJoint()
+    {
+        _joint = GetComponent<ConfigurableJoint>();
+        _jointChecked = true;
     }
 
     public void ApplyForce(Vector3 force, ForceMode mode = ForceMode.Force)
