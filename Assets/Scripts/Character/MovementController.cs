@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovementController : MonoBehaviour
 {
     [SerializeField] PlayerInputHandler _input;
-    [SerializeField] Transform _cameraTransform;
+    [SerializeField] float _turnTorque = 5000f;
 
     RagdollCharacter _character;
     GroundDetector _groundDetector;
@@ -33,17 +33,17 @@ public class MovementController : MonoBehaviour
         var input = _input.MoveInput;
         if (input.sqrMagnitude < 0.01f) return;
 
-        // Camera-relative direction
-        Vector3 camForward = _cameraTransform.forward;
-        Vector3 camRight = _cameraTransform.right;
-        camForward.y = 0f;
-        camRight.y = 0f;
-        camForward.Normalize();
-        camRight.Normalize();
-
-        Vector3 moveDir = (camForward * input.y + camRight * input.x).normalized;
-
         var pelvisRb = _character.pelvis.Rb;
+
+        // Rotation: input.x applies Y-axis torque
+        pelvisRb.AddTorque(Vector3.up * input.x * _turnTorque, ForceMode.Force);
+
+        // Movement: character-forward direction × input.y
+        Vector3 forward = pelvisRb.transform.forward;
+        forward.y = 0f;
+        forward.Normalize();
+        Vector3 moveDir = forward * input.y;
+
         Vector3 horizontalVel = pelvisRb.linearVelocity;
         horizontalVel.y = 0f;
 
